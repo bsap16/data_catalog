@@ -1,0 +1,121 @@
+[
+  {
+    "tabela": "clientes",
+    "total_registros": 10000,
+    "colunas": [
+      {
+        "id": 0,
+        "nome": "RowNumber",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 1,
+        "nome": "CustomerId",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 2,
+        "nome": "Surname",
+        "tipo": "TEXT",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 3,
+        "nome": "CreditScore",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 4,
+        "nome": "Geography",
+        "tipo": "TEXT",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 5,
+        "nome": "Gender",
+        "tipo": "TEXT",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 6,
+        "nome": "Age",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 7,
+        "nome": "Tenure",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 8,
+        "nome": "Balance",
+        "tipo": "REAL",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 9,
+        "nome": "NumOfProducts",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 10,
+        "nome": "HasCrCard",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 11,
+        "nome": "IsActiveMember",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 12,
+        "nome": "EstimatedSalary",
+        "tipo": "REAL",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      },
+      {
+        "id": 13,
+        "nome": "Exited",
+        "tipo": "INTEGER",
+        "nao_nulo": false,
+        "valor_padrao": null,
+        "chave_primaria": false
+      }
+    ],
+    "chaves_estrangeiras": []
+  }
+]
