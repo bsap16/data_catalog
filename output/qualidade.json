@@ -1,0 +1,168 @@
+[
+  {
+    "tabela": "clientes",
+    "total_linhas": 10000,
+    "total_colunas": 14,
+    "colunas": [
+      {
+        "coluna": "RowNumber",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 10000,
+        "duplicatas": 0,
+        "min": 1.0,
+        "max": 10000.0,
+        "media": 5000.5,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "CustomerId",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 10000,
+        "duplicatas": 0,
+        "min": 15565701.0,
+        "max": 15815690.0,
+        "media": 15690940.57,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Surname",
+        "tipo": "object",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 2932,
+        "duplicatas": 7068,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "CreditScore",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 460,
+        "duplicatas": 9540,
+        "min": 350.0,
+        "max": 850.0,
+        "media": 650.53,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Geography",
+        "tipo": "object",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 3,
+        "duplicatas": 9997,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Gender",
+        "tipo": "object",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 2,
+        "duplicatas": 9998,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Age",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 70,
+        "duplicatas": 9930,
+        "min": 18.0,
+        "max": 92.0,
+        "media": 38.92,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Tenure",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 11,
+        "duplicatas": 9989,
+        "min": 0.0,
+        "max": 10.0,
+        "media": 5.01,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Balance",
+        "tipo": "float64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 6382,
+        "duplicatas": 3618,
+        "min": 0.0,
+        "max": 250898.09,
+        "media": 76485.89,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "NumOfProducts",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 4,
+        "duplicatas": 9996,
+        "min": 1.0,
+        "max": 4.0,
+        "media": 1.53,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "HasCrCard",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 2,
+        "duplicatas": 9998,
+        "min": 0.0,
+        "max": 1.0,
+        "media": 0.71,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "IsActiveMember",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 2,
+        "duplicatas": 9998,
+        "min": 0.0,
+        "max": 1.0,
+        "media": 0.52,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "EstimatedSalary",
+        "tipo": "float64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 9999,
+        "duplicatas": 1,
+        "min": 11.58,
+        "max": 199992.48,
+        "media": 100090.24,
+        "score_qualidade": 100
+      },
+      {
+        "coluna": "Exited",
+        "tipo": "int64",
+        "nulos": 0,
+        "percentual_nulos": 0.0,
+        "valores_unicos": 2,
+        "duplicatas": 9998,
+        "min": 0.0,
+        "max": 1.0,
+        "media": 0.2,
+        "score_qualidade": 100
+      }
+    ]
+  }
+]
