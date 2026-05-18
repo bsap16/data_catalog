@@ -1,10 +1,10 @@
-#Libraries
+# Bibliotecas
 import pandas as pd
 import sqlite3
 import json
 import os
 
-#Visualization
+# Carrengamdo os dados
 def carregar_csv(caminho):
     df = pd.read_csv(caminho)
     print(f"✓ Dataset carregado: {df.shape[0]} linhas e {df.shape[1]} colunas")
@@ -13,7 +13,7 @@ def carregar_csv(caminho):
     print(df.head())
     return df
 
-#Verificar as pastas
+# Verificação de arquivo
 def salvar_no_banco(df, db_path):
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
     conn = sqlite3.connect(db_path)
@@ -21,24 +21,24 @@ def salvar_no_banco(df, db_path):
     conn.close()
     print(f"\n✓ Dados salvos no banco: {db_path}")
 
-#Listar tabelas
+# Listagem de variáveis
 def listar_tabelas(conn):
     query = "SELECT name FROM sqlite_master WHERE type='table'"
     return pd.read_sql(query, conn)["name"].tolist()
 
-#Extrair metadados
+# Extração de metadados
 def extrair_metadados_tabela(conn, tabela):
     cursor = conn.cursor()
 
-    #Informações das colunas
+    # Informações das colunas
     cursor.execute(f"PRAGMA table_info({tabela})")
     colunas = cursor.fetchall()
 
-    #Chaves estrangeiras
+    # Chaves estrangeiras
     cursor.execute(f"PRAGMA foreign_key_list({tabela})")
     fks = cursor.fetchall()
 
-    #Total de registros
+    # Total de registros
     cursor.execute(f"SELECT COUNT(*) FROM {tabela}")
     total = cursor.fetchone()[0]
 
@@ -62,6 +62,7 @@ def extrair_metadados_tabela(conn, tabela):
         })
     return metadados
 
+# Extração dos dados
 def extrair_catalogo_completo(db_path):
     conn = sqlite3.connect(db_path)
     tabelas = listar_tabelas(conn)
@@ -75,13 +76,13 @@ def extrair_catalogo_completo(db_path):
     conn.close()
     return catalogo
 
-#Salvar no gitHub
+# Salvar no  banco de dados
 if __name__ == "__main__":
-    #Carregar CSV e salva no banco
+    # Carregar CSV e salva no banco de dados
     df = carregar_csv("data/Churn_Modelling.csv")
     salvar_no_banco(df, "data/banco_exemplo.db")
 
-    #Extrai metadados do banco
+    # Extrai metadados do banco de dados
     catalogo = extrair_catalogo_completo("data/banco_exemplo.db")
 
     # Salva o catálogo em JSON
