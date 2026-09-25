@@ -195,6 +195,32 @@ Um catálogo de dados automatizado que:
 
 ---
 
+#### 📅 Dia 6 — Score de qualidade enriquecido
+
+**Data:** 24 setembro de 2026.
+**Objetivo do dia:** enriquecer o score de qualidade com múltiplas dimensões.
+
+**O que foi feito:**
+- Adicionada função `detectar_outliers()` usando método IQR.
+- Adicionada função `verificar_valores_discrepantes()` com regras específicas do domínio bancário.
+- Adicionada função `verificar_duplicatas_id()` para integridade de identidade.
+- Adicionada função `calcular_score()` com quatro dimensões de penalidade.
+- Score atualizado: nulos (30pts), outliers (20pts), valores discrepantes (30pts), duplicatas de ID (20pts).
+- Adicionada as medidas descritivas de tendência central e desvio padrão por coluna.
+
+**Decisões tomadas:**
+- **Método IQR para outliers:** método estatístico para detecção de outliers sem assumir distribuição normal dos dados.
+- **Regras de domínio para valores discrepantes:** valores como CreditScore fora de 300-850 ou idade negativa são discrepantes no contexto bancário e nas regras de negócio específicas do domínio podem ser mais precisas.
+- **Quatro dimensões no score:** nulos, outliers, valores discrepantes e duplicatas de ID cobrindo as principais dimensões de qualidade de dados.
+
+**Observação sobre os dados:**
+- O dataset Churn Modelling não possui duplicatas de ID nem valores discrepantes. Um comportamento esperado por ser dataset educacional.
+- Outliers foram detectados em colunas como Balance e CreditScore, sendo valores extremos presentes nos dados.
+
+**Commit:** `feat: enrich quality score with outliers, outlier values and id duplicates`
+
+---
+
 ### Limitações do projeto
 
 | Limitação | Impacto | Plano |
@@ -413,6 +439,29 @@ An automated data catalog that:
 | SQLite without multi-user | no real access logs |
 
 ---
+
+#### 📅 Day 6 — Enriched quality score
+
+**Goal:** enrich the quality score with multiple dimensions.
+
+**What was done:**
+- Added `detectar_outliers()` function using IQR method.
+- Added `verificar_valores_discrepantes()` with banking domain-specific rules.
+- Added `verificar_duplicatas_id()` for identity integrity.
+- Added `calcular_score()` with four penalty dimensions.
+- Updated score: nulls (30pts), outliers (20pts), anomalous values (30pts), ID duplicates (20pts).
+- Added descriptive statistics for measures of central tendency and standard deviation for each column.
+
+**Decisions made:**
+- **IQR method for outliers:** a statistical method for detecting outliers without assuming a normal distribution of the data.
+- **Domain rules for outliers values:** values such as CreditScore outside the 300–850 range or negative ages are considered anomalous in the banking context. Domain-specific business rules can provide more precise detection.
+- **Four score dimensions:** nulls, outliers, anomalous values, and duplicate IDs, covering the main dimensions of data quality.
+
+**Data observations:**
+- The Churn Modelling dataset contains no duplicate IDs or anomalous values. This is expected behavior for an educational dataset.
+- Outliers were detected in columns such as Balance and CreditScore, representing extreme values present in the data.
+
+**Commit:** `feat: enrich quality score with outliers, anomalous values and id duplicates`
 
 ### Next steps
 

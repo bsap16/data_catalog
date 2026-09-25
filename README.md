@@ -32,7 +32,7 @@ Este projeto propõe uma solução prática: um catálogo de dados automatizado 
 **Fase 1 — Fundação**
 - [x] Extração automática de metadados de tabelas
 - [x] Análise de qualidade com score por coluna
-- [ ] Score de qualidade enriquecido
+- [x] Score de qualidade enriquecido
 - [ ] Dashboard interativo com Streamlit
 - [ ] Relatórios de auditoria de acesso
 
@@ -135,7 +135,7 @@ This project proposes a practical solution: an automated data catalog that docum
 **Phase 1 — Foundation**
 - [x] Automatic metadata extraction from tables
 - [x] Data quality analysis with per-column score
-- [ ] Enriched quality score
+- [x] Enriched quality score
 - [ ] Interactive Streamlit dashboard
 - [ ] Access audit reports
 
