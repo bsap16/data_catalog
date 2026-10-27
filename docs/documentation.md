@@ -221,6 +221,27 @@ Um catálogo de dados automatizado que:
 
 ---
 
+#### 📅 Dia 7 — Dashboard streamlit
+
+**Data:** 27 outubro de 2026.
+**Objetivo do dia:** construir o dashboard completo que conta a história dos dados.
+
+**O que foi feito:**
+- Criado `app.py` com dashboard bilíngue em 4 páginas;
+- Página 1 — Visão Geral: métricas principais e qualidade dos dados;
+- Página 2 — Perfil dos Clientes: distribuição por país, gênero, idade e produtos;
+- Página 3 — Comportamento Financeiro: saldo, salário, score de crédito e tenure;
+- Página 4 — Risco de Churn: taxa de churn por país, gênero, faixa etária e produtos;
+- Instalada biblioteca `streamlit-option-menu` para navegação por abas.
+
+**Decisões tomadas:**
+- **4 páginas temáticas:** o dashboard conta uma história progressiva de quem são os dados, quem são os clientes, como se comportam e quem está saindo.
+- **Bilíngue via radio button:** o usuário poderá escolher o idioma e todos os textos e labels atualizam dinamicamente.
+- **@st.cache_data:** evita recarregar os dados a cada interação, tornando o dashboard mais rápido.
+- **Gráficos Plotly:** mais interativos e profissionais que os gráficos nativos do Streamlit.
+
+**Commit:** `feat: add bilingual streamlit dashboard with 4 thematic pages`
+
 ### Limitações do projeto
 
 | Limitação | Impacto | Plano |
@@ -233,7 +254,6 @@ Um catálogo de dados automatizado que:
 
 ### Próximos passos
 
-- [ ] Construir dashboard Streamlit
 - [ ] Classificar sensibilidade LGPD com ML — Fase 2
 - [ ] Detector de anomalias — Fase 3
 - [ ] Modelo de churn auditável — Fase 4
@@ -430,16 +450,6 @@ An automated data catalog that:
 
 ---
 
-### Project limitations
-
-| Limitation | Impact | Plan |
-|------------|--------|------|
-| Educational dataset without nulls | unrealistic score in Phase 1 |
-| Score only penalizes nulls | incomplete metric |
-| SQLite without multi-user | no real access logs |
-
----
-
 #### 📅 Day 6 — Enriched quality score
 
 **Goal:** enrich the quality score with multiple dimensions.
@@ -463,9 +473,42 @@ An automated data catalog that:
 
 **Commit:** `feat: enrich quality score with outliers, anomalous values and id duplicates`
 
+---
+
+#### 📅 Day 7 — Streamlit Dashboard
+
+**Goal:** build the complete dashboard that tells the data story
+
+**What was done:**
+- Created `app.py` with bilingual dashboard across 4 pages
+- Page 1 — Overview: key metrics and data quality
+- Page 2 — Customer Profile: distribution by country, gender, age, and products
+- Page 3 — Financial Behavior: balance, salary, credit score, and tenure
+- Page 4 — Churn Risk: churn rate by country, gender, age group, and products
+- Installed `streamlit-option-menu` library for tab navigation
+
+**Decisions made:**
+- **4 thematic pages:** the dashboard tells a progressive story — what the data is, who the customers are, how they behave, and who is leaving
+- **Bilingual via radio button:** the user chooses the language and all texts and labels update dynamically
+- **@st.cache_data:** avoids reloading data on every interaction, making the dashboard faster
+- **Plotly charts:** more interactive and professional than Streamlit's native charts
+
+**Commit:** `feat: add bilingual streamlit dashboard with 4 thematic pages`
+
+---
+
+### Project limitations
+
+| Limitation | Impact | Plan |
+|------------|--------|------|
+| Educational dataset without nulls | unrealistic score in Phase 1 |
+| Score only penalizes nulls | incomplete metric |
+| SQLite without multi-user | no real access logs |
+
+---
+
 ### Next steps
 
-- [ ] Build Streamlit dashboard
 - [ ] LGPD sensitivity classification with ML — Phase 2
 - [ ] Anomaly detector — Phase 3
 - [ ] Auditable churn model — Phase 4

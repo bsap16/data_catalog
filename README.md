@@ -33,7 +33,7 @@ Este projeto propõe uma solução prática: um catálogo de dados automatizado 
 - [x] Extração automática de metadados de tabelas
 - [x] Análise de qualidade com score por coluna
 - [x] Score de qualidade enriquecido
-- [ ] Dashboard interativo com Streamlit
+- [x] Dashboard interativo com Streamlit
 - [ ] Relatórios de auditoria de acesso
 
 **Fase 2 — Classificação**
@@ -136,7 +136,7 @@ This project proposes a practical solution: an automated data catalog that docum
 - [x] Automatic metadata extraction from tables
 - [x] Data quality analysis with per-column score
 - [x] Enriched quality score
-- [ ] Interactive Streamlit dashboard
+- [x] Interactive Streamlit dashboard
 - [ ] Access audit reports
 
 **Phase 2 — Classification**
