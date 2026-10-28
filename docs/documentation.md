@@ -223,7 +223,7 @@ Um catálogo de dados automatizado que:
 
 #### 📅 Dia 7 — Dashboard streamlit
 
-**Data:** 27 outubro de 2026.
+**Data:** 27 de outubro de 2026.
 **Objetivo do dia:** construir o dashboard completo que conta a história dos dados.
 
 **O que foi feito:**
@@ -242,6 +242,34 @@ Um catálogo de dados automatizado que:
 
 **Commit:** `feat: add bilingual streamlit dashboard with 4 thematic pages`
 
+---
+
+#### 📅 Dia 8 — Relatório de auditoria de acesso
+
+**Data:** 28 de outubro de 2026.
+**Objetivo do dia:** criar um sistema de logs de acesso e um relatório de auditoria.
+
+**O que foi feito:**
+- Foi criado `src/audit.py` com quatro funções:
+  - `gerar_logs()` que simula 50 registros de acesso ao banco dos últimos 30 dias;
+  - `salvar_logs()` que persiste os logs na tabela `audit_logs` do SQLite;
+  - `gerar_relatorio()` que consolida os logs em relatório JSON estruturado;
+  - `imprimir_resumo()` que exibe o resumo no terminal;
+- Foi gerado `output/auditoria.json` com métricas de acesso;
+- E adicionada a página de auditoria no dashboard com gráficos e tabela de eventos de alto risco.
+
+**Decisões tomadas:**
+- **Logs simulados:** em produção os logs seriam gerados automaticamente pelo banco. A simulação demonstra a estrutura e o valor da auditoria mesmo sem infraestrutura real.
+- **Classificação de risco:** as operações destrutivas (DELETE, UPDATE) em colunas sensíveis recebem risco Alto que reflete critérios reais de compliance.
+- **Colunas sensíveis definidas explicitamente:** As variáveis Surname, CustomerId, EstimatedSalary e Balance são dados que exigem rastreabilidade pela LGPD.
+
+**Limitação:**
+- Os logs são simulados, pois em ambiente real seriam capturados diretamente pelo banco de dados ou por uma camada de middleware.
+
+**Commit:** `feat: add audit log generator and audit dashboard page`
+
+---
+
 ### Limitações do projeto
 
 | Limitação | Impacto | Plano |
@@ -257,8 +285,6 @@ Um catálogo de dados automatizado que:
 - [ ] Classificar sensibilidade LGPD com ML — Fase 2
 - [ ] Detector de anomalias — Fase 3
 - [ ] Modelo de churn auditável — Fase 4
-
----
 
 ---
 
@@ -494,6 +520,31 @@ An automated data catalog that:
 - **Plotly charts:** more interactive and professional than Streamlit's native charts
 
 **Commit:** `feat: add bilingual streamlit dashboard with 4 thematic pages`
+
+---
+
+#### 📅 Day 8 — Access audit report
+
+**Goal:** create access log system and audit report
+
+**What was done:**
+- Created `src/audit.py` with four functions:
+  - `gerar_logs()` which simulates 50 access records over the last 30 days;
+  - `salvar_logs()` which persists logs to the `audit_logs` SQLite table;
+  - `gerar_relatorio()` which consolidates logs into a structured JSON report;
+  - `imprimir_resumo()` which prints summary to terminal;
+- Generated `output/auditoria.json` with access metrics;
+- Added Audit page to dashboard with charts and high risk events table.
+
+**Decisions made:**
+- **Simulated logs:** in production, logs would be generated automatically by the database. Simulation demonstrates the structure and value of auditing even without real infrastructure.
+- **Risk classification:** destructive operations (DELETE, UPDATE) on sensitive columns receive High risk which reflects real compliance criteria.
+- **Explicitly defined sensitive columns:** Surname, CustomerId, EstimatedSalary, and Balance are data requiring LGPD traceability.
+
+**Limitation:**
+- Logs are simulated, but in a real environment they would be captured directly by the database or a middleware layer.
+
+**Commit:** `feat: add audit log generator and audit dashboard page`
 
 ---
 

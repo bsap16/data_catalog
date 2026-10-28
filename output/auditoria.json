@@ -1,0 +1,163 @@
+{
+  "gerado_em": "28-10-2026 11:07:38",
+  "total_acessos": 50,
+  "acessos_por_usuario": [
+    {
+      "usuario_id": "BRB001",
+      "usuario_nome": "Maria José",
+      "perfil": "Analista de dados",
+      "total": 11
+    },
+    {
+      "usuario_id": "BRB002",
+      "usuario_nome": "José Silva",
+      "perfil": "Engenheiro de dados",
+      "total": 11
+    },
+    {
+      "usuario_id": "BRB003",
+      "usuario_nome": "Joana Oliva",
+      "perfil": "Cientista de dados",
+      "total": 15
+    },
+    {
+      "usuario_id": "BRB004",
+      "usuario_nome": "Carmen Marina",
+      "perfil": "Gestor de governança",
+      "total": 7
+    },
+    {
+      "usuario_id": "BRB005",
+      "usuario_nome": "Ricardo Santos",
+      "perfil": "Auditor de compliance",
+      "total": 6
+    }
+  ],
+  "acessos_por_operacao": [
+    {
+      "operacao": "DELETE",
+      "total": 8
+    },
+    {
+      "operacao": "INSERT",
+      "total": 10
+    },
+    {
+      "operacao": "SELECT",
+      "total": 22
+    },
+    {
+      "operacao": "UPDATE",
+      "total": 10
+    }
+  ],
+  "acessos_sensiveis": 37,
+  "percentual_sensivel": 74.0,
+  "eventos_alto_risco": [
+    {
+      "timestamp": "30-09-2026 18:14:38",
+      "usuario_nome": "Carmen Marina",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "24-10-2026 02:29:38",
+      "usuario_nome": "Ricardo Santos",
+      "operacao": "UPDATE",
+      "tabela": "transacoes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "23-10-2026 06:09:38",
+      "usuario_nome": "Ricardo Santos",
+      "operacao": "UPDATE",
+      "tabela": "transacoes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "23-10-2026 00:24:38",
+      "usuario_nome": "Carmen Marina",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "21-10-2026 11:39:38",
+      "usuario_nome": "Maria José",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "CustomerId"
+    },
+    {
+      "timestamp": "13-10-2026 23:33:38",
+      "usuario_nome": "Maria José",
+      "operacao": "DELETE",
+      "tabela": "contas",
+      "coluna_acessada": "CustomerId"
+    },
+    {
+      "timestamp": "13-10-2026 08:34:38",
+      "usuario_nome": "Maria José",
+      "operacao": "DELETE",
+      "tabela": "clientes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "12-10-2026 06:51:38",
+      "usuario_nome": "Ricardo Santos",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "10-10-2026 16:38:38",
+      "usuario_nome": "Ricardo Santos",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "Surname"
+    },
+    {
+      "timestamp": "08-10-2026 22:32:38",
+      "usuario_nome": "José Silva",
+      "operacao": "DELETE",
+      "tabela": "clientes",
+      "coluna_acessada": "Balance"
+    },
+    {
+      "timestamp": "06-10-2026 13:04:38",
+      "usuario_nome": "José Silva",
+      "operacao": "UPDATE",
+      "tabela": "transacoes",
+      "coluna_acessada": "Balance"
+    },
+    {
+      "timestamp": "05-10-2026 15:11:38",
+      "usuario_nome": "Carmen Marina",
+      "operacao": "DELETE",
+      "tabela": "clientes",
+      "coluna_acessada": "EstimatedSalary"
+    },
+    {
+      "timestamp": "05-10-2026 02:28:38",
+      "usuario_nome": "Ricardo Santos",
+      "operacao": "UPDATE",
+      "tabela": "clientes",
+      "coluna_acessada": "EstimatedSalary"
+    }
+  ],
+  "distribuicao_risco": [
+    {
+      "nivel_risco": "Alto",
+      "total": 13
+    },
+    {
+      "nivel_risco": "Baixo",
+      "total": 8
+    },
+    {
+      "nivel_risco": "Médio",
+      "total": 29
+    }
+  ]
+}

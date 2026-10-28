@@ -34,7 +34,7 @@ Este projeto propõe uma solução prática: um catálogo de dados automatizado 
 - [x] Análise de qualidade com score por coluna
 - [x] Score de qualidade enriquecido
 - [x] Dashboard interativo com Streamlit
-- [ ] Relatórios de auditoria de acesso
+- [x] Relatórios de auditoria de acesso
 
 **Fase 2 — Classificação**
 - [ ] Classificação de sensibilidade LGPD com ML

@@ -34,9 +34,9 @@ textos = {
         "Catálogo de dados automatizado de dados financeiros"
     ),
     "paginas": (
-        ["Overview", "Customer profile", "Financial behavior", "Churn risk"]
+        ["Overview", "Customer profile", "Financial behavior", "Churn risk", "Audit"]
         if not pt else
-        ["Visão geral", "Perfil dos clientes", "Comportamentos financeiros", "Risco de churn"]
+        ["Visão geral", "Perfil dos clientes", "Comportamentos financeiros", "Risco de churn", "Auditoria"]
     ),
     "total_clientes": "Total customers" if not pt else "Total de clientes",
     "paises": "Countries" if not pt else "Países",
@@ -87,8 +87,30 @@ textos = {
         if not pt else
         "Este dataset é educacional e não possui nulos ou valores discrepantes. "
         "Outliers representam valores extremos reais presentes nos dados."
-    )
+    ),
+    "audit_titulo": "Access audit report" if not pt else "Relatório de auditoria de acesso",
+    "audit_subtitulo": (
+        "Simulated access log for governance and compliance demonstration."
+        if not pt else
+        "Log de acesso simulado para demonstração de governança e compliance."
+    ),
+    "audit_total": "Total accesses" if not pt else "Total de acessos",
+    "audit_sensiveis": "Sensitive accesses" if not pt else "Acessos sensíveis",
+    "audit_risco": "High risk events" if not pt else "Eventos de alto risco",
+    "audit_aviso": (
+        "This audit log is simulated for demonstration purposes. "
+        "In a real environment, logs would be generated automatically by the database."
+        if not pt else
+        "Este log de auditoria é simulado para fins de demonstração. "
+        "Em um ambiente real, os logs seriam gerados automaticamente pelo banco de dados."
+    ),
+    "audit_por_usuario": "Accesses by user" if not pt else "Acessos por usuário",
+    "audit_por_operacao": "Accesses by operation" if not pt else "Acessos por operação",
+    "audit_dist_risco": "Risk distribution" if not pt else "Distribuição de risco",
+    "audit_eventos": "High risk events" if not pt else "Eventos de alto risco",
+    "audit_icone": "shield-lock"
 }
+
 
 # ─────────────────────────────────────────
 # Carregamento dos dados
@@ -124,7 +146,7 @@ st.divider()
 pagina = option_menu(
     menu_title=None,
     options=textos["paginas"],
-    icons=["house", "people", "cash-coin", "exclamation-triangle"],
+    icons=["house", "people", "cash-coin", "exclamation-triangle", "shield-lock"],
     orientation="horizontal"
 )
 
@@ -164,7 +186,7 @@ if pagina == p1:
         title=textos["col_score"],
         labels={"coluna": "", "score_qualidade": textos["col_score"]}
     )
-    st.plotly_chart(fig_score, use_container_width='stretch')
+    st.plotly_chart(fig_score, use_container_use_container_width='stretch')
 
     fig_out = px.bar(
         df_qual[df_qual["outliers"] > 0],
@@ -173,7 +195,7 @@ if pagina == p1:
         labels={"coluna": "", "outliers": textos["col_outliers"]},
         color_discrete_sequence=["#FF6B6B"]
     )
-    st.plotly_chart(fig_out, use_container_width='stretch')
+    st.plotly_chart(fig_out, use_container_use_container_width='stretch')
 
 
 # ─────────────────────────────────────────
@@ -191,7 +213,7 @@ if pagina == p2:
             title=textos["dist_pais"],
             color_discrete_sequence=px.colors.qualitative.Set2
         )
-        st.plotly_chart(fig_pais, width="stretch")
+        st.plotly_chart(fig_pais, use_container_width=True)
 
     with col2:
         genero_map = {"Male": "Masculino", "Female": "Feminino"} if pt else {}
@@ -202,7 +224,7 @@ if pagina == p2:
             title=textos["dist_genero"],
             color_discrete_sequence=px.colors.qualitative.Pastel
         )
-        st.plotly_chart(fig_gen, width="stretch")
+        st.plotly_chart(fig_gen, use_container_width=True)
 
     fig_idade = px.histogram(
         df, x="Age", nbins=20,
@@ -210,7 +232,7 @@ if pagina == p2:
         labels={"Age": "Idade" if pt else "Age", "count": "Quantidade" if pt else "Count"},
         color_discrete_sequence=["#353EC0"]
     )
-    st.plotly_chart(fig_idade, width="stretch")
+    st.plotly_chart(fig_idade, use_container_width=True)
 
     col3, col4 = st.columns(2)
 
@@ -222,7 +244,7 @@ if pagina == p2:
             title=textos["cartao"],
             color_discrete_sequence=["#00CC96", "#EF553B"]
         )
-        st.plotly_chart(fig_cartao, width="stretch")
+        st.plotly_chart(fig_cartao, use_container_width=True)
 
     with col4:
         ativo = df["IsActiveMember"].map({1: textos["sim"], 0: textos["nao"]}).value_counts().reset_index()
@@ -232,7 +254,7 @@ if pagina == p2:
             title=textos["ativo"],
             color_discrete_sequence=["#00CC96", "#EF553B"]
         )
-        st.plotly_chart(fig_ativo, width="stretch")
+        st.plotly_chart(fig_ativo, use_container_width=True)
 
 # ─────────────────────────────────────────
 # Página 3 - Comportamento financeiro
@@ -247,7 +269,7 @@ if pagina == p3:
         labels={"Balance": "Saldo" if pt else "Balance", "count": "Quantidade" if pt else "Count"},
         color_discrete_sequence=["#2B808F"]
     )
-    st.plotly_chart(fig_saldo, width="stretch")
+    st.plotly_chart(fig_saldo, use_container_width=True)
 
     fig_salario = px.histogram(
         df, x="EstimatedSalary", nbins=30,
@@ -256,7 +278,7 @@ if pagina == p3:
                 "count": "Quantidade" if pt else "Count"},
         color_discrete_sequence=["#AB63FA"]
     )
-    st.plotly_chart(fig_salario, width="stretch")
+    st.plotly_chart(fig_salario, use_container_width=True)
 
     col1, col2 = st.columns(2)
 
@@ -269,7 +291,7 @@ if pagina == p3:
             color="Geography",
             color_discrete_sequence=px.colors.qualitative.Set2
         )
-        st.plotly_chart(fig_credit, width="stretch")
+        st.plotly_chart(fig_credit, use_container_width=True)
 
     with col2:
         fig_tenure = px.histogram(
@@ -279,7 +301,7 @@ if pagina == p3:
                     "count": "Quantidade" if pt else "Count"},
             color_discrete_sequence=["#FFA15A"]
         )
-        st.plotly_chart(fig_tenure, width="stretch")
+        st.plotly_chart(fig_tenure, use_container_width=True)
 
 # ─────────────────────────────────────────
 # Página 4 — Risco de churn
@@ -310,7 +332,7 @@ if pagina == p4:
             color="Geography",
             color_discrete_sequence=px.colors.qualitative.Set2
         )
-        st.plotly_chart(fig_cp, width="stretch")
+        st.plotly_chart(fig_cp, use_container_width=True)
 
     with col2:
         churn_gen = df.groupby("Gender")["Exited"].mean().reset_index()
@@ -327,7 +349,7 @@ if pagina == p4:
             color="Gender",
             color_discrete_sequence=px.colors.qualitative.Pastel
         )
-        st.plotly_chart(fig_cg, width="stretch")
+        st.plotly_chart(fig_cg, use_container_width=True)
 
     # Churn por faixa etária
     df_idade = df.copy()
@@ -336,7 +358,7 @@ if pagina == p4:
         bins=[0, 25, 35, 45, 55, 100],
         labels=["< 25", "25-35", "35-45", "45-55", "> 55"]
     )
-    churn_idade = df_idade.groupby("FaixaEtaria", observed='s')["Exited"].mean().reset_index()
+    churn_idade = df_idade.groupby("FaixaEtaria", observed=True)["Exited"].mean().reset_index()
     churn_idade["Exited"] = (churn_idade["Exited"] * 100).round(1)
     fig_ci = px.bar(
         churn_idade, x="FaixaEtaria", y="Exited",
@@ -345,7 +367,7 @@ if pagina == p4:
         color="Exited",
         color_continuous_scale="RdYlGn_r"
     )
-    st.plotly_chart(fig_ci, width="stretch")
+    st.plotly_chart(fig_ci, use_container_width=True)
 
     # Churn por número de produtos
     churn_prod = df.groupby("NumOfProducts")["Exited"].mean().reset_index()
@@ -358,6 +380,76 @@ if pagina == p4:
         color="Exited",
         color_continuous_scale="RdYlGn_r"
     )
-    st.plotly_chart(fig_cprod, width="stretch")
+    st.plotly_chart(fig_cprod, use_container_width=True)
+
+# ─────────────────────────────────────────
+# Página 5 — Auditoria
+# ─────────────────────────────────────────
+
+@st.cache_data
+def carregar_auditoria():
+    with open("output/auditoria.json", encoding="utf-8") as f:
+        return json.load(f)
+
+p5 = textos["paginas"][4]
+if pagina == p5:
+
+    st.subheader(textos["audit_titulo"])
+    st.caption(textos["audit_subtitulo"])
+    st.warning(textos["audit_aviso"])
+    st.divider()
+
+    # Métricas
+    auditoria = carregar_auditoria()
+    c1, c2, c3 = st.columns(3)
+    c1.metric(textos["audit_total"], auditoria["total_acessos"])
+    c2.metric(textos["audit_sensiveis"], f"{auditoria['acessos_sensiveis']} ({auditoria['percentual_sensivel']}%)")
+    c3.metric(textos["audit_risco"], len(auditoria["eventos_alto_risco"]))
+
+    st.divider()
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        df_usuario = pd.DataFrame(auditoria["acessos_por_usuario"])
+        fig_usr = px.bar(
+            df_usuario,
+            x="usuario_nome", y="total",
+            title=textos["audit_por_usuario"],
+            labels={"usuario_nome": "", "total": "Total"},
+            color="perfil",
+            color_discrete_sequence=px.colors.qualitative.Set2
+        )
+        st.plotly_chart(fig_usr, use_container_width=True)
 
 
+    with col2:
+        df_op = pd.DataFrame(auditoria["acessos_por_operacao"])  
+        fig_op = px.pie(
+            df_op,
+            names="operacao", values="total",
+            title=textos['audit_por_operacao'],
+            color_discrete_sequence=px.colors.qualitative.Pastel
+        )
+        st.plotly_chart(fig_op, use_container_width=True)
+
+    # Distribuição de risco
+    df_risco = pd.DataFrame(auditoria["distribuicao_risco"])
+    cores_risco = {"Alto": "#EF553B", "Médio": "#FFA15A", "Baixo": "#00CC96"}
+    fig_risco = px.bar(
+        df_risco,
+        x="nivel_risco", y="total",
+        title=textos["audit_dist_risco"],
+        labels={"nivel_risco": "", "total": "Total"},
+        color="nivel_risco",
+        color_discrete_map=cores_risco
+    )
+    st.plotly_chart(fig_risco, use_container_width=True)
+
+    # Tabela de eventos de alto risco
+    st.subheader(textos["audit_eventos"])
+    df_alto = pd.DataFrame(auditoria["eventos_alto_risco"])
+    if len(df_alto) > 0:
+        st.dataframe(df_alto, use_container_width=True)
+    else:
+        st.success("No high risk events found." if not pt else "Nenhum eventos de alto risco encontrado")
